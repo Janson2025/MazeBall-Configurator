@@ -28,11 +28,16 @@ export default [
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
-      'react/jsx-no-target-blank': 'off',
+      'react/prop-types': 'off',
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
     },
+  },
+  {
+    files: ['src/components/BallMaze.jsx', 'src/components/SceneLighting.jsx', 'src/game/MazeScene.jsx',
+      'src/game/TerrainTiles.jsx', 'src/game/MazeSurfaceMaterial.jsx', 'src/game/EnemyMarbles.jsx', 'src/game/GeneratedMaze.jsx'],
+    rules: { 'react/no-unknown-property': 'off' },
   },
 ]

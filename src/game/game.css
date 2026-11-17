@@ -1,0 +1,62 @@
+.game { max-width: 900px; margin-inline: auto; }
+.game-scoreboard { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
+.race-actions { display: flex; gap: 8px; }
+.race-theme { margin-bottom: 8px; }
+.race-notice { color: #8b331b; font-weight: 700; margin-top: 8px; }
+.race-notice:empty { display: none; }
+.maze-development { margin-bottom: 16px; padding: 10px 14px; border: 1px solid #d5ded3; border-radius: 9px; }
+.maze-development summary { cursor: pointer; font-weight: 650; }
+.maze-development p { margin-top: 6px; font-size: 0.85rem; }
+.development-controls { display: flex; align-items: end; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+.development-controls label { display: grid; gap: 4px; font-size: 0.85rem; }
+.development-controls input[type="number"], .development-controls select { min-height: 36px; padding: 4px; font: inherit; }
+.development-controls .development-toggle { display: flex; align-items: center; min-height: 36px; }
+.game-times { display: flex; gap: clamp(16px, 5vw, 48px); margin: 0; }
+.game-times dt { color: #4d5b52; font-size: 0.8rem; font-weight: 650; }
+.game-times dd { margin: 0; font-size: 1.35rem; font-weight: 750; font-variant-numeric: tabular-nums; }
+.game-preview:focus-visible { outline: 3px solid #487945; outline-offset: 4px; }
+.game-viewport { min-height: clamp(240px, calc(100svh - 325px), min(500px, calc(100vw - 72px))); }
+.game-viewport canvas, .game-viewport canvas:active { cursor: default; }
+.game-controls {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding-top: 10px; color: #c5d1ca; font-size: 0.9rem;
+}
+.game-controls p { max-width: 36ch; }
+.maze-twist { display: grid; gap: 4px; min-width: 0; }
+.maze-twist span { font-size: 0.82rem; font-weight: 650; }
+.maze-twist input { width: clamp(100px, 20vw, 160px); min-height: 32px; margin: 0; accent-color: #d8f397; cursor: ew-resize; }
+.race-scoring { margin-top: 10px; color: #4d5b52; font-size: 0.85rem; }
+.race-breakdown { margin-block: 14px; }
+.race-breakdown div { display: flex; justify-content: space-between; gap: 12px; padding-block: 4px; }
+.race-breakdown dd { margin: 0; font-weight: 700; }
+
+@media (max-width: 560px) {
+  .game-controls { flex-wrap: wrap; }
+  .game-controls p { max-width: none; flex-basis: 100%; }
+}
+.thumb-joystick {
+  position: relative; display: grid; place-items: center; flex: none;
+  width: 88px; height: 88px; border-radius: 50%; border: 1px solid #6d8278;
+  background: #1c2623; touch-action: none; user-select: none; cursor: grab;
+}
+.thumb-joystick:active { cursor: grabbing; }
+.thumb-joystick::before {
+  content: ''; position: absolute; inset: 12px; border: 1px dashed #5c7064; border-radius: 50%;
+}
+.thumb-joystick span {
+  width: 32px; height: 32px; border-radius: 50%; background: #d8f397;
+  box-shadow: 0 3px 8px #0006; pointer-events: none;
+}
+.finish-dialog {
+  width: min(420px, calc(100% - 32px)); padding: 26px; border: 1px solid #d5ded3;
+  border-radius: 18px; color: #19221f;
+}
+.finish-dialog::backdrop { background: #131d19ac; }
+.finish-dialog h2 { font-size: 1.65rem; margin-bottom: 10px; }
+.finish-dialog p + p { margin-top: 6px; }
+.finish-actions { margin-top: 22px; display: flex; gap: 8px; justify-content: flex-end; }
+.game-primary {
+  min-height: 40px; border: 1px solid #55764f; border-radius: 8px;
+  background: #d8f397; color: #19221f; font-weight: 700; padding: 6px 11px;
+}
+.game-primary:hover { background: #c4e57d; }
